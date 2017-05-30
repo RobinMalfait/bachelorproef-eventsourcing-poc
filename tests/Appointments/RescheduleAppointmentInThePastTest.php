@@ -24,10 +24,10 @@ class RescheduleAppointmentInThePastTest extends Specification
     {
         return [
             new AppointmentWasScheduled(
-                AppointmentId::fromString("appointment_id_1"),
-                CustomerId::generate(),  // It doesn't matter which id, for this test case
-                AgentId::generate(),  // It doesn't matter which id, for this test case
-                SubjectId::generate(), // It doesn't matter which id, for this test case
+                AppointmentId::fromString("appointment_1"),
+                CustomerId::fromString('customer_1'),
+                AgentId::fromString('agent_1'),
+                SubjectId::fromString('subject_1'),
                 DateRange::fromTimestamps(time(), time())
             )
         ];
@@ -41,7 +41,7 @@ class RescheduleAppointmentInThePastTest extends Specification
     public function when()
     {
         return RescheduleAppointment::with(
-            AppointmentId::fromString("appointment_id_1"),
+            AppointmentId::fromString("appointment_1"),
             DateRange::fromTimestamps(time() - 1000, time() - 2000) // Reschedule to the past
         );
     }

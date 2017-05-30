@@ -1,10 +1,10 @@
 Scenario: Reschedule appointment
 
 Given:
-  Appointment was scheduled with an appointment id of "appointment_id_1", a customer id of "903731ba-12fc-4c2f-b515-14901c0dc442", an agent id of "f84181b0-9045-41aa-801e-36b27e312681", a subject id of "be08e439-0ea5-4545-a6c3-4d0bb56b08b2", a start of "1496170172", an end of "1496170172".
+  Appointment was scheduled with an appointment id of "appointment_1", a customer id of "customer_1", an agent id of "agent_1", a subject id of "subject_1", a start of "1496175805", an end of "1496175805".
 
 When:
-  Reschedule appointment with an appointment id of "appointment_id_1", a start of "1496171172", an end of "1496172172".
+  Reschedule appointment with an appointment id of "appointment_1", a start of "1496176805", an end of "1496177805".
 
 Then:
   One event has been produced.

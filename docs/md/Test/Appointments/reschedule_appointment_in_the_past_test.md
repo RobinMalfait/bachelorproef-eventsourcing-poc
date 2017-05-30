@@ -4,11 +4,11 @@
 
 ### Given:
 
-- Appointment was scheduled with an appointment id of __*appointment_id_1*__, a customer id of __*d90cbbec-ecbd-48d4-87a5-a385aac737c8*__, an agent id of __*c05bd7f9-efa7-48ca-88bb-5dfcba730075*__, a subject id of __*40a8988f-2e4a-44cb-8c29-c1b6ec6a95f0*__, a start of __*1496170172*__, an end of __*1496170172*__.
+- Appointment was scheduled with an appointment id of __*appointment_1*__, a customer id of __*customer_1*__, an agent id of __*agent_1*__, a subject id of __*subject_1*__, a start of __*1496175805*__, an end of __*1496175805*__.
 
 ### When:
 
-Reschedule appointment with an appointment id of __*appointment_id_1*__, a start of __*1496169172*__, an end of __*1496168172*__.
+Reschedule appointment with an appointment id of __*appointment_1*__, a start of __*1496174805*__, an end of __*1496173805*__.
 
 ### Then:
 

@@ -4,7 +4,7 @@ Given:
   /
 
 When:
-  Schedule appointment with an appointment id of "66cd3e06-3115-4421-bbe4-c908e9f00021", a customer id of "56fda061-7db7-4acf-b694-9eb20a8a566c", an agent id of "eb779052-81ca-4548-83b2-aeb91c45e4be", a subject id of "0c485bea-ba1e-4c06-b821-6293b84b72d2", a start of "1496169172", an end of "1496168172".
+  Schedule appointment with an appointment id of "appointment_1", a customer id of "customer_1", an agent id of "agent_1", a subject id of "subject_1", a start of "1496174805", an end of "1496173805".
 
 Then:
   None events have been produced.

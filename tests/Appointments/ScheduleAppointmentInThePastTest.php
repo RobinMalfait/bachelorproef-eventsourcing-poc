@@ -32,10 +32,10 @@ class ScheduleAppointmentInThePastTest extends Specification
     public function when()
     {
         return ScheduleAppointment::with(
-            AppointmentId::generate(),
-            CustomerId::generate(),
-            AgentId::generate(),
-            SubjectId::generate(),
+            AppointmentId::fromString('appointment_1'),
+            CustomerId::fromString('customer_1'),
+            AgentId::fromString('agent_1'),
+            SubjectId::fromString('subject_1'),
             DateRange::fromTimestamps(time() - 1000, time() - 2000)
         );
     }
