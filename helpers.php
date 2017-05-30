@@ -33,17 +33,3 @@ function id()
 {
     return (String) Uuid::uuid4();
 }
-
-function setupDatabase($path, $contents = '')
-{
-    file_put_contents($path, $contents);
-}
-
-function dd()
-{
-    array_map(function ($x) {
-        var_dump($x);
-    }, func_get_args());
-
-    die(1);
-}

@@ -18,8 +18,8 @@ $eventStorageDatabase = 'database/.events';
 $appointments = 'database/appointments.db.json';
 
 /* ---- DO NOT DO THIS IN PRODUCTION ---- */
-setupDatabase($eventStorageDatabase);
-setupDatabase($appointments);
+file_put_contents($eventStorageDatabase, '');
+file_put_contents($appointments, '');
 /* ---- DO NOT DO THIS IN PRODUCTION ---- */
 
 // Doing some bindings
