@@ -1,23 +1,23 @@
 <?php namespace Skedify\Appointments\Commands;
 
 use Skedify\Appointments\VO\AppointmentId;
-use Skedify\Appointments\VO\Period;
+use Skedify\Appointments\VO\DateRange;
 
 final class RescheduleAppointment
 {
     /** @var \Skedify\Appointments\VO\AppointmentId */
     private $appointmentId;
 
-    /** @var \Skedify\Appointments\VO\Period */
+    /** @var \Skedify\Appointments\VO\DateRange */
     private $period;
 
-    private function __construct(AppointmentId $appointmentId, Period $period)
+    private function __construct(AppointmentId $appointmentId, DateRange $period)
     {
         $this->appointmentId = $appointmentId;
         $this->period = $period;
     }
 
-    public static function with(AppointmentId $appointmentId, Period $period)
+    public static function with(AppointmentId $appointmentId, DateRange $period)
     {
         return new self($appointmentId, $period);
     }

@@ -1,0 +1,13 @@
+Scenario: Reschedule appointment in the past
+
+Given:
+  Appointment was scheduled with an appointment id of "appointment_id_1", a customer id of "d90cbbec-ecbd-48d4-87a5-a385aac737c8", an agent id of "c05bd7f9-efa7-48ca-88bb-5dfcba730075", a subject id of "40a8988f-2e4a-44cb-8c29-c1b6ec6a95f0", a start of "1496170172", an end of "1496170172".
+
+When:
+  Reschedule appointment with an appointment id of "appointment_id_1", a start of "1496169172", an end of "1496168172".
+
+Then:
+  None events have been produced.
+  An `AppointmentCanNotBeScheduledInThePast` exception was thrown.
+
+Rendered 30-05-2017.

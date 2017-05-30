@@ -3,7 +3,7 @@
 use Skedify\Appointments\VO\AppointmentId;
 use Skedify\Appointments\VO\CustomerId;
 use Skedify\Appointments\VO\AgentId;
-use Skedify\Appointments\VO\Period;
+use Skedify\Appointments\VO\DateRange;
 use Skedify\Appointments\VO\SubjectId;
 
 final class ScheduleAppointment
@@ -20,10 +20,10 @@ final class ScheduleAppointment
     /** @var \Skedify\Appointments\VO\SubjectId */
     private $subjectId;
 
-    /** @var \Skedify\Appointments\VO\Period */
+    /** @var \Skedify\Appointments\VO\DateRange */
     private $period;
 
-    private function __construct(AppointmentId $appointmentId, CustomerId $customerId, AgentId $agentId, SubjectId $subjectId, Period $period)
+    private function __construct(AppointmentId $appointmentId, CustomerId $customerId, AgentId $agentId, SubjectId $subjectId, DateRange $period)
     {
         $this->appointmentId = $appointmentId;
         $this->customerId = $customerId;
@@ -32,7 +32,7 @@ final class ScheduleAppointment
         $this->period = $period;
     }
 
-    public static function with(AppointmentId $appointmentId, CustomerId $customerId, AgentId $agentId, SubjectId $subjectId, Period $period)
+    public static function with(AppointmentId $appointmentId, CustomerId $customerId, AgentId $agentId, SubjectId $subjectId, DateRange $period)
     {
         return new self($appointmentId, $customerId, $agentId, $subjectId, $period);
     }

@@ -1,7 +1,7 @@
 <?php namespace Skedify\Appointments\Events;
 
 use Skedify\Appointments\VO\AppointmentId;
-use Skedify\Appointments\VO\Period;
+use Skedify\Appointments\VO\DateRange;
 use Skedify\EventSourcing\Events\DomainEvent;
 
 final class AppointmentWasRescheduled implements DomainEvent
@@ -10,13 +10,13 @@ final class AppointmentWasRescheduled implements DomainEvent
     /** @var \Skedify\Appointments\VO\AppointmentId */
     private $appointmentId;
 
-    /** @var \Skedify\Appointments\VO\Period */
-    private $period;
+    /** @var \Skedify\Appointments\VO\DateRange */
+    private $range;
 
-    public function __construct(AppointmentId $id, Period $period)
+    public function __construct(AppointmentId $id, DateRange $range)
     {
         $this->appointmentId = $id;
-        $this->period = $period;
+        $this->range = $range;
     }
 
     public function getAggregateId()
@@ -29,9 +29,9 @@ final class AppointmentWasRescheduled implements DomainEvent
         return $this->appointmentId;
     }
 
-    public function getPeriod()
+    public function getRange()
     {
-        return $this->period;
+        return $this->range;
     }
 
     /**
@@ -41,8 +41,8 @@ final class AppointmentWasRescheduled implements DomainEvent
     {
         return [
             'appointment_id' => $this->appointmentId->toString(),
-            'start' => $this->period->getStartTimestamp(),
-            'end' => $this->period->getEndTimestamp(),
+            'start' => $this->range->getStart(),
+            'end' => $this->range->getEnd(),
         ];
     }
 
@@ -55,7 +55,7 @@ final class AppointmentWasRescheduled implements DomainEvent
     {
         return new self(
             AppointmentId::fromString($data['appointment_id']),
-            Period::fromTimestamps($data['start'], $data['end'])
+            DateRange::fromTimestamps($data['start'], $data['end'])
         );
     }
 }

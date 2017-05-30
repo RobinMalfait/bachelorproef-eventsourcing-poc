@@ -2,26 +2,26 @@
 
 class AgentId
 {
-    private $id;
+    private $agentId;
 
-    public function __construct(ID $id)
+    public function __construct($agentId)
     {
-        $this->id = $id;
+        $this->agentId = $agentId;
     }
 
     public static function generate()
     {
-        return new self(ID::generate());
+        return new self(ID::generate()->getId());
     }
 
     public static function fromString($input)
     {
-        return new self(ID::fromString($input));
+        return new self($input);
     }
 
     public function toString()
     {
-        return $this->id->getId();
+        return $this->agentId;
     }
 
     public function __toString()

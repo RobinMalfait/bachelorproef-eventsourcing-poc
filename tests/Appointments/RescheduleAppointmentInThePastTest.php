@@ -9,7 +9,7 @@ use Skedify\Appointments\Events\AppointmentWasScheduled;
 use Skedify\Appointments\VO\AgentId;
 use Skedify\Appointments\VO\AppointmentId;
 use Skedify\Appointments\VO\CustomerId;
-use Skedify\Appointments\VO\Period;
+use Skedify\Appointments\VO\DateRange;
 use Skedify\Appointments\VO\SubjectId;
 use Specification;
 
@@ -28,7 +28,7 @@ class RescheduleAppointmentInThePastTest extends Specification
                 CustomerId::generate(),  // It doesn't matter which id, for this test case
                 AgentId::generate(),  // It doesn't matter which id, for this test case
                 SubjectId::generate(), // It doesn't matter which id, for this test case
-                Period::fromTimestamps(time(), time())
+                DateRange::fromTimestamps(time(), time())
             )
         ];
     }
@@ -42,7 +42,7 @@ class RescheduleAppointmentInThePastTest extends Specification
     {
         return RescheduleAppointment::with(
             AppointmentId::fromString("appointment_id_1"),
-            Period::fromTimestamps(time() - 1000, time() - 2000) // Reschedule to the past
+            DateRange::fromTimestamps(time() - 1000, time() - 2000) // Reschedule to the past
         );
     }
 

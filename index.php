@@ -11,7 +11,7 @@ use Skedify\Appointments\Listeners\WhenAppointmentWasScheduled;
 use Skedify\Appointments\VO\AgentId;
 use Skedify\Appointments\VO\AppointmentId;
 use Skedify\Appointments\VO\CustomerId;
-use Skedify\Appointments\VO\Period;
+use Skedify\Appointments\VO\DateRange;
 use Skedify\Appointments\VO\SubjectId;
 use Skedify\Storages\JsonDatabase;
 
@@ -37,9 +37,9 @@ $start = new DateTime();
 $end = new DateTime();
 
 // Schedule a new appointment
-$period = Period::fromTimestamps($start->getTimestamp() + 20000, $end->getTimestamp() + 30000);
+$period = DateRange::fromTimestamps($start->getTimestamp() + 20000, $end->getTimestamp() + 30000);
 dispatch(ScheduleAppointment::with($appointmentId, $customerId, $agentId, $subjectId, $period));
 
 // Reschedule the same appointment, later in the future
-$period = Period::fromTimestamps($start->getTimestamp() + 50000, $end->getTimestamp() + 80000);
+$period = DateRange::fromTimestamps($start->getTimestamp() + 50000, $end->getTimestamp() + 80000);
 dispatch(RescheduleAppointment::with($appointmentId, $period));

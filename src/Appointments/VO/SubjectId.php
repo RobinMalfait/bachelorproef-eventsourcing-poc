@@ -2,26 +2,26 @@
 
 class SubjectId
 {
-    private $id;
+    private $subjectId;
 
-    public function __construct(ID $id)
+    public function __construct($subjectId)
     {
-        $this->id = $id;
+        $this->subjectId = $subjectId;
     }
 
     public static function generate()
     {
-        return new self(ID::generate());
+        return new self(ID::generate()->getId());
     }
 
     public static function fromString($input)
     {
-        return new self(ID::fromString($input));
+        return new self($input);
     }
 
     public function toString()
     {
-        return $this->id->getId();
+        return $this->subjectId;
     }
 
     public function __toString()

@@ -2,26 +2,26 @@
 
 class AppointmentId
 {
-    private $id;
+    private $appointmentId;
 
-    public function __construct(ID $id)
+    public function __construct($appointmentId)
     {
-        $this->id = $id;
+        $this->appointmentId = $appointmentId;
     }
 
     public static function generate()
     {
-        return new self(ID::generate());
+        return new self(ID::generate()->getId());
     }
 
     public static function fromString($input)
     {
-        return new self(ID::fromString($input));
+        return new self($input);
     }
 
     public function toString()
     {
-        return $this->id->getId();
+        return $this->appointmentId;
     }
 
     public function __toString()

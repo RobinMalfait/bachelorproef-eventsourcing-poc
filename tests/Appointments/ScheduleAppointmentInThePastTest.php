@@ -8,7 +8,7 @@ use Skedify\Appointments\Commands\ScheduleAppointmentHandler;
 use Skedify\Appointments\VO\AgentId;
 use Skedify\Appointments\VO\AppointmentId;
 use Skedify\Appointments\VO\CustomerId;
-use Skedify\Appointments\VO\Period;
+use Skedify\Appointments\VO\DateRange;
 use Skedify\Appointments\VO\SubjectId;
 use Specification;
 
@@ -36,7 +36,7 @@ class ScheduleAppointmentInThePastTest extends Specification
             CustomerId::generate(),
             AgentId::generate(),
             SubjectId::generate(),
-            Period::fromTimestamps(time() - 1000, time() - 2000)
+            DateRange::fromTimestamps(time() - 1000, time() - 2000)
         );
     }
 

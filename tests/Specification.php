@@ -1,5 +1,8 @@
 <?php
 
+use Docs\Documentation;
+use Docs\MarkdownFormatter;
+use Docs\TextFormatter;
 use Skedify\Core\AggregateRoot;
 use Skedify\EventSourcing\AggregateClassNotFoundException;
 use Skedify\EventSourcing\EventSourcingRepository;
@@ -46,6 +49,45 @@ abstract class Specification extends PHPUnit_Framework_TestCase
      * @return mixed
      */
     abstract public function handler($repository);
+
+    /**
+     * The tests that have been executed
+     *
+     * @var array
+     */
+    protected static $tests = [];
+
+    /**
+     * Setup before class
+     */
+    public static function setUpBeforeClass()
+    {
+        static::$tests = [];
+    }
+
+    /**
+     * TearDown
+     */
+    public function tearDown()
+    {
+        static::$tests[] = [
+            'name' => $this->getName(),
+            'status' => $this->getStatus()
+        ];
+    }
+
+    /**
+     * TearDown after the class
+     */
+    public static function tearDownAfterClass()
+    {
+        $documentation = new Documentation('./docs', [
+            new TextFormatter(),
+            new MarkdownFormatter()
+        ]);
+
+        $documentation->generateFor(new static, static::$tests);
+    }
 
     /**
      * @param String $exception

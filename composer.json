@@ -16,6 +16,7 @@
     },
     "autoload-dev": {
         "psr-4": {
+            "Docs\\": "tests/Docs/",
             "Test\\": "tests/"
         },
         "classmap": [
