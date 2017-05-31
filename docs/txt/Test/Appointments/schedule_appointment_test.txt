@@ -4,10 +4,10 @@ Given:
   /
 
 When:
-  Schedule appointment with an appointment id of "appointment_1", a customer id of "customer_1", an agent id of "agent_1", a subject id of "subject_1", a start of "1496176806", an end of "1496177806".
+  Schedule appointment with an appointment id of "appointment_1", a customer id of "customer_1", an agent id of "agent_1", a subject id of "subject_1", a start of "1496220278", an end of "1496221278".
 
 Then:
-  One event has been produced.
+  One event was produced.
   An `AppointmentWasScheduled` event was produced.
 
-Rendered 30-05-2017.
+Rendered 31-05-2017.

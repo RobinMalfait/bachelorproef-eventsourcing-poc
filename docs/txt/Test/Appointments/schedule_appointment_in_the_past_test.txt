@@ -4,10 +4,10 @@ Given:
   /
 
 When:
-  Schedule appointment with an appointment id of "appointment_1", a customer id of "customer_1", an agent id of "agent_1", a subject id of "subject_1", a start of "1496174805", an end of "1496173805".
+  Schedule appointment with an appointment id of "appointment_1", a customer id of "customer_1", an agent id of "agent_1", a subject id of "subject_1", a start of "1496218278", an end of "1496217278".
 
 Then:
-  None events have been produced.
+  No events were produced.
   An `AppointmentCanNotBeScheduledInThePast` exception was thrown.
 
-Rendered 30-05-2017.
+Rendered 31-05-2017.

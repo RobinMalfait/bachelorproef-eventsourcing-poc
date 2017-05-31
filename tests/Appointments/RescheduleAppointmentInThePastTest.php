@@ -58,7 +58,7 @@ class RescheduleAppointmentInThePastTest extends Specification
     }
 
     /** @test */
-    public function none_events_have_been_produced()
+    public function no_events_were_produced()
     {
         $this->assertCount(0, $this->producedEvents);
     }

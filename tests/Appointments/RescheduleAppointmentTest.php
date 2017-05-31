@@ -58,7 +58,7 @@ class RescheduleAppointmentTest extends Specification
     }
 
     /** @test */
-    public function one_event_has_been_produced()
+    public function one_event_was_produced()
     {
         $this->assertCount(1, $this->producedEvents);
     }
