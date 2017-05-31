@@ -2,8 +2,8 @@
 
 use DateTime;
 
-class DateRange {
-
+class DateRange
+{
     private $start;
 
     private $end;
@@ -48,5 +48,4 @@ class DateRange {
     {
         return $this->end;
     }
-
 }
